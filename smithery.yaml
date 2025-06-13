@@ -1,0 +1,41 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => {
+      const args = [];
+      if(config.debug) {
+        args.push('--debug');
+      }
+      args.push('--url', config.url);
+      if(config.headers) {
+        for(const h of config.headers) {
+          args.push('--header', h);
+        }
+      }
+      return { command: 'fdp-mcp-server', args };
+    }
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required: []
+    properties:
+      url:
+        type: string
+        default: https://fdp.qianxin.com/mcp/v1/basic/mcp/
+        description: Streamable HTTP MCP server endpoint
+      headers:
+        type: array
+        items:
+          type: string
+        description: Headers to pass to the MCP server requests
+      debug:
+        type: boolean
+        default: false
+        description: Enable debug logging
+  exampleConfig:
+    url: https://fdp.qianxin.com/mcp/v1/basic/mcp/
+    debug: false
