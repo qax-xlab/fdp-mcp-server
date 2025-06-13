@@ -1,4 +1,3 @@
-
 奇安信X实验室提供的mcp工具。
 
 # 奇安信X实验室
@@ -15,6 +14,13 @@ X实验室是国内最早利用大规模数据进行安全研究、安全应用�
 
 这里需要注意的是远端的mcp server地址目前只支持Streamable HTTP的访问方式。
 
+### Installing via Smithery
+
+To install QAX XLab Security Data Query Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@qax-xlab/fdp-mcp-server):
+
+```bash
+npx -y @smithery/cli install @qax-xlab/fdp-mcp-server --client claude
+```
 
 ## 本地代码运行
 1. 从仓库客隆代码
