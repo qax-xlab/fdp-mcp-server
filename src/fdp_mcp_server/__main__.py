@@ -43,7 +43,6 @@ def main():
     parser = _setup_arg_parser()
     args = parser.parse_args()
     _setup_logging(args.debug)
-    print(args)
     asyncio.run(run_streamable_http_client(args.url, headers=args.header))
 
 
