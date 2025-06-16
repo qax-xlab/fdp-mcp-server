@@ -4,6 +4,10 @@ WORKDIR /app
 
 COPY . /app
 
+ENV PYTHONUNBUFFERED=1
 RUN uv sync
 
-CMD ["uv", "run", "--project", "/app", "fdp-mcp-server"]
+CMD []
+
+
+ENTRYPOINT [ "./docker-entrypoint.sh" ]
