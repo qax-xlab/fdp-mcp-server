@@ -1,6 +1,6 @@
 [project]
 name = "fdp-mcp-server"
-version = "0.1.0"
+version = "0.1.1"
 description = "QAX XLab's mcp server"
 readme = "README.md"
 requires-python = ">=3.13"
